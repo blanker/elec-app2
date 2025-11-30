@@ -3,12 +3,12 @@
 
 // 获取当前环境
 const ENV = import.meta.env.MODE || 'development';
-
+console.log('Current ENV:', import.meta.env.MODE);
 // 环境配置映射
 const envConfig = {
   // 开发环境配置
   development: {
-    apiHost: 'https://elec.blanker.cc/api/private',
+    apiHost: 'http://127.0.0.1:8787/api/proxy',
     apiTimeout: 10000,
     enableLogging: true,
     enableMock: true,
@@ -18,6 +18,7 @@ const envConfig = {
   // 测试环境配置
   test: {
     apiHost: 'https://test-api.example.com/api/private',
+    // apiHost: 'https://test-api.example.com/api/private',
     apiTimeout: 15000,
     enableLogging: true,
     enableMock: false,
@@ -26,7 +27,7 @@ const envConfig = {
 
   // 生产环境配置
   production: {
-    apiHost: 'https://elec.blanker.cc/api/private',
+    apiHost: 'https://elec.blanker.cc/api/proxy',
     apiTimeout: 20000,
     enableLogging: false,
     enableMock: false,
