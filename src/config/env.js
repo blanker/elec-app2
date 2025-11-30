@@ -27,7 +27,7 @@ const envConfig = {
 
   // 生产环境配置
   production: {
-    apiHost: 'https://elec.blanker.cc/api/proxy',
+    apiHost: 'https://elec2.blanker.cc/api/proxy',
     apiTimeout: 20000,
     enableLogging: false,
     enableMock: false,
