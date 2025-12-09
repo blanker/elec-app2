@@ -89,7 +89,7 @@ apiClient.interceptors.response.use(
     // 处理返回 200 但实际上是未授权的情况
     if (response.status === 200 && response.data) {
       const { success, message } = response.data;
-      if (success === false && message === "未授权访问") {
+      if (success === false && (message === "未授权访问" || message === "token无效或已过期")) {
         redirectToLogin();
         // 中断后续处理，抛出错误
         return Promise.reject(new Error(message));
